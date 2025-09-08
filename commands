@@ -23,3 +23,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 exit
 sudo umount -R /mnt
 sudo reboot
+
+
+efibootmgr --create --disk /dev/sda --part 1 --label "ArchLinux" --loader /EFI/GRUB/grubx64.efi
