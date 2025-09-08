@@ -11,3 +11,18 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 sudo umount -R /mnt
+----------------------------------------------
+
+sudo mount --bind /dev /mnt/dev
+sudo mount --bind /proc /mnt/proc
+sudo mount --bind /sys /mnt/sys
+sudo mount --bind /run /mnt/run
+
+sudo chroot /mnt
+
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+
+exit
+sudo umount -R /mnt
+sudo reboot
