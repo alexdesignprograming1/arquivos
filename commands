@@ -8,3 +8,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 [ -d /sys/firmware/efi ] && echo "UEFI" || echo "Legacy BIOS"
+
+
+sudo umount -R /mnt
