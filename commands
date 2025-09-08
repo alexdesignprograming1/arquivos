@@ -13,10 +13,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 sudo umount -R /mnt
 ----------------------------------------------
 
-sudo mount --bind /dev /mnt/dev
-sudo mount --bind /proc /mnt/proc
-sudo mount --bind /sys /mnt/sys
-sudo mount --bind /run /mnt/run
+sudo mount --bind /dev /mnt/dev && sudo mount --bind /proc /mnt/proc && sudo mount --bind /sys /mnt/sys && sudo mount --bind /run /mnt/run
 
 sudo chroot /mnt
 
