@@ -32,33 +32,5 @@ mount | grep /mnt/run
 
 
 
-
-[root@mint /]# refind-install 
-ShimSource is none
-Installing rEFInd on Linux....
-ESP was found at /boot/efi using vfat
-Found rEFInd installation in /boot/efi/EFI/refind; upgrading it.
-Copied rEFInd binary files
-
-Notice: Backed up existing icons directory as icons-backup.
-Existing refind.conf file found; copying sample file as refind.conf-sample
-to avoid overwriting your customizations.
-
-EFI variables are not supported on this system.
-EFI variables are not supported on this system.
-error trace:
-EFI variables are not supported on this system.
-error trace:
-Creating new NVRAM entry
-
-ALERT: There were problems running the efibootmgr program! You may need to
-rename the refind_x64.efi binary to the default name (EFI/BOOT/bootx64.efi
-on x86-64 systems, EFI/BOOT/bootia32.efi on x86 systems, or
-EFI/BOOT/bootaa64.efi on ARM64 systems) to have it run!
-
-Existing //boot/refind_linux.conf found; not overwriting.
-
-ALERT:
-Installation has completed, but problems were detected. Review the output for
-error messages and take corrective measures as necessary. You may need to
-re-run this script or install manually before rEFInd will work.
+mkdir -p /boot/efi/EFI/BOOT
+cp -v /boot/efi/EFI/refind/refind_x64.efi /boot/efi/EFI/BOOT/bootx64.efi
